@@ -9,6 +9,7 @@ import { PiTrademarkLight } from "react-icons/pi";
 import FeatureCard from "./FeatureCard";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
+import { ArrowRightIcon } from "lucide-react";
 const Footer = () => {
   const router = useRouter();
   return (
@@ -26,7 +27,6 @@ const Footer = () => {
           <Button
             title="Become a Partner"
             variant="secondary"
-        
             style="text-white border-white mt-10"
             secondary={false}
             onclick={() => router.push("/agent")}
@@ -99,6 +99,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
+     
       <footer className="flex flex-col px-5 py-20 text-muted-foreground md:items-center lg:px-20">
         <div className="grid items-start gap-y-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:max-w-[300px]">
@@ -123,7 +124,7 @@ const Footer = () => {
                 <Link href={"/about"}>About us</Link>
               </li>
               <li>
-                <Link href={"/blog"}>Blog</Link>
+                <Link href={"/blogs"}>Blog</Link>
               </li>
               <li>
                 <Link href={"/contact"}>Contact us</Link>

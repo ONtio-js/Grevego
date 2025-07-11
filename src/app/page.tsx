@@ -3,51 +3,56 @@ import { useRouter } from "next/navigation";
 import Button from "./_components/Button";
 import FeatureCard from "./_components/FeatureCard";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import HeaderCarousel from "./_components/HeaderCarousel";
+import Link from "next/link";
+import { ArrowRightIcon } from "lucide-react";
 export default  function Home() {
   const features = [
     {
       id: 1,
-      title: "Green Retailing",
+      title: "Green and Cold Distribution",
       description:
-        "Sustainable marketplace connecting consumers with fresh, local produce while minimizing environmental impact.",
-      imgUrl: "/home/features/feature4.png",
+        "We deliver organic produce and healthy meals from trusted vendors to your doorstep—fresh, cool, and sustainably.",
+      imgUrl: "/home/features/feature1.jpg",
     },
     {
       id: 2,
-      title: "cold last mile delivery",
+      title: "Nutrition Support",
       description:
-        "Temperature-controlled last-mile delivery ensuring maximum freshness and minimal food waste.",
-      imgUrl: "/home/features/feature1.png",
+        "Personalized nutrition guidance to help you eat better, live healthier, and feel your best.",
+      imgUrl: "/home/features/feature2.jpg",
     },
     {
       id: 3,
-      title: "AI-Powered Nutrition Planner",
+      title: "Circular Economy",
       description:
-        "Personalized nutrition suggestions powered by artificial intelligence for better health outcomes.",
-      imgUrl: "/home/features/feature2.jpeg",
+        "Turning food waste into green energy and organic fertilizer—closing the loop for a healthier planet.",
+      imgUrl: "/home/features/feature3.jpg",
     },
   ];
   const howItWorks = [
     {
       id: 1,
       title: "Discover",
-      description: "Browse fresh, healthy products",
+      description: " Identify nutrition needs and find products and vendors.",
     },
     {
       id: 2,
       title: "Plan",
-      description: "Get AI-driven nutrition advice.",
+      description: "Get smart nutrition advice and suggestions.",
     },
     {
       id: 3,
       title: "Shop",
-      description: "Place your order effortlessly",
+      description:
+        "Instantly order or schedule your salads and smoothies from your favorite vendors effortlessly.",
     },
     {
       id: 4,
       title: "Deliver",
       description:
-        "Receive solar-cooled, eco-friendly delivery at your doorstep.",
+        "Receive fresh product delivery at your doorstep, powered by cold last mile delivery.",
     },
   ];
   const router = useRouter();
@@ -56,9 +61,14 @@ export default  function Home() {
       {/* begining of hero section */}
       <section className="w-full pb-10 pt-16 md:pt-10">
         <div className="lg:px-30 flex flex-col items-center gap-2 px-10 md:pt-10 lg:pt-0">
-          <h1 className="max-w-[500px] pb-4 pt-10 text-center text-3xl font-bold text-gray-800 md:pt-4 md:text-5xl md:leading-snug">
+          <motion.h1
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            className="max-w-[500px] pb-4 pt-10 text-center text-3xl font-bold text-gray-800 md:pt-4 md:text-5xl md:leading-snug"
+          >
             Healthy Food, Sustainable Future
-          </h1>
+          </motion.h1>
           <p className="text-center text-sm text-gray-700">
             Revolutionizing food access through green retailing, smart delivery,
             and AI-powered nutrition guidance.
@@ -78,8 +88,8 @@ export default  function Home() {
           <FeatureCard title="Personalized Nutrition" />
           <FeatureCard title="Clean Energy Solutions" />
         </div>
-        <div className="relative my-16 w-full overflow-y-hidden">
-          <div className="no-scrollbar flex items-center gap-3 overflow-y-hidden overflow-x-scroll md:gap-7 lg:justify-center">
+        <div className="no-scrollbar relative my-16 w-full overflow-y-hidden">
+          <div className="no-scrollbar hidden items-center gap-3 overflow-y-hidden overflow-x-scroll sm:flex md:gap-7 lg:justify-center">
             <Image
               src={
                 "https://res.cloudinary.com/dm2pa4nll/grevego/hero/hero-1.png"
@@ -112,24 +122,57 @@ export default  function Home() {
               priority
             />
           </div>
+          <HeaderCarousel />
         </div>
       </section>
       {/* end of hero section */}
-
+      <section>
+        <div className="flex flex-col items-center gap-5 px-5 py-5 md:py-10 lg:px-20">
+          <h2 className="text-xl font-semibold capitalize text-gray-800 md:text-2xl">
+            The Grevego Story
+          </h2>
+          <p className="text-gray-700">
+            It all started with a simple truth, everyone deserves access to
+            fresh, healthy food, and no good produce should go to waste.
+          </p>
+          <p className="max-w-[1200px] text-center text-gray-700">
+            At Grevego, we saw two problems: while many people struggle to eat
+            well, tons of fresh fruits and vegetables go unsold and uneaten
+            every day. Farmers and local vendors lose income, while communities
+            lose access to nutrition. On top of that, food waste harms the
+            planet.
+          </p>
+          <div className="flex flex-col items-center gap-5">
+            <h5 className="font-semibold text-gray-700">
+              So we asked: What if we could fix both?
+            </h5>
+            <p className="max-w-[1200px] text-center text-gray-700">
+              That’s why we connect health-conscious customers to local vendors
+              of fresh, organic and healthy meal options, freshly and
+              efficiently delivered. We make healthy eating easier with
+              nutrition support and close the circular economy loop with
+              collecting and repurposing organic waste.
+            </p>
+            <p className="max-w-[1200px] text-center text-gray-700">
+              Grevego isn’t just a marketplace—it’s a movement for better
+              nutrition and a greener future.
+            </p>
+          </div>
+        </div>
+      </section>
       {/* beginning of features section */}
-      <section className="">
+      <section className="pt-10">
         <div className="flex flex-col items-center gap-5 py-5 md:py-10">
           <h2 className="text-2xl font-semibold capitalize text-gray-800 md:text-3xl">
             our smart solution
           </h2>
           <p className="max-w-[690px] px-2 text-center text-gray-700 md:px-10 lg:px-0">
             Grevego combines innovation and sustainability to make healthy
-            living effortless , { " " }
-            personalized nutrition, eco-friendly delivery, and zero-waste
-            solutions, all in one place.
+            living effortless , personalized nutrition, eco-friendly delivery,
+            and zero-waste solutions, all in one place.
           </p>
         </div>
-        <div className="grid gap-10 px-5 pt-10 md:px-20 lg:grid-cols-3">
+        <div className="grid gap-10 px-5 md:px-20 lg:grid-cols-3">
           {features.map((feature) => (
             <div key={feature.id} className="rounded-xl p-5 shadow-lg">
               <Image
@@ -149,10 +192,10 @@ export default  function Home() {
       </section>
       {/* end of feature section   */}
 
-      <section className="px-5 py-20 md:px-20">
+      <section className="px-5 py-20 md:mt-10 md:px-20">
         <div className="flex flex-col items-start gap-4 pb-10">
           <h2 className="text-2xl font-semibold capitalize text-gray-800 md:text-3xl">
-            sustainability made simple
+            sustainability and wellness made simple
           </h2>
           <p className="text-gray-700">
             Experience a seamless journey to healthier living with Grevego
@@ -216,57 +259,126 @@ export default  function Home() {
         </div>
       </section>
 
-      <section className="bg-secondaryColor/50 px-5 py-20 md:px-10 lg:px-20">
-        <div className="flex flex-col items-center gap-5">
-          <h2 className="py-3 text-2xl font-semibold text-gray-800 md:text-center md:text-3xl">
-            Building a Greener Tomorrow
+      <section className="flex flex-col gap-10 px-5 py-20 md:px-10 lg:flex-row lg:items-center lg:px-20">
+        <div className="flex max-w-[600px] flex-col items-start gap-4">
+          <h2 className="text-2xl font-semibold text-gray-800 md:text-3xl">
+            Talk to a Nutrition Expert
           </h2>
-          <p className="max-w-[900px] text-center text-gray-700">
-            At Grevego, sustainability isn’t just a goal—it’s our promise.
-            Through innovative practices and advanced green technology, we are
-            redefining how businesses and individuals can contribute to a
-            healthier planet.
+          <p>
+            Have questions about your diet or health goals? Our licensed
+            nutritionists are here to help — no stress, no pressure.
           </p>
+          <p>
+            98% of users found clarity and direction after a 15-min nutrition
+            chat.
+          </p>
+          <Button
+            title="Get Free Consultation"
+            variant="primary"
+            onclick={() => router.push("/nutrition")}
+            style="w-[250px] md:max-w-[300px] py-4 mt-5"
+          />
         </div>
-        <div className="no-scrollbar flex items-center overflow-x-scroll pt-10 md:justify-center lg:gap-4">
-          <FeatureCard colored title="Reduce Food Waste" />
-          <FeatureCard colored title="Support Vendors" />
-          <FeatureCard colored title="Personalized Nutrition" />
-          <FeatureCard colored title="Clean Energy Solutions" />
-        </div>
-        <div className="grid grid-cols-4 items-end gap-2 pt-20 md:gap-5">
-          <Image
-            src={"/home/user-1.jpeg"}
-            alt="hero"
-            width={300}
-            height={200}
-            className="rounded-lg"
-          />
-          <Image
-            src={"/home/user-2.jpeg"}
-            alt="hero"
-            width={300}
-            height={200}
-            className="h-[50%] rounded-lg"
-          />
-          <Image
-            src={"/home/user-3.jpeg"}
-            alt="hero"
-            width={300}
-            height={200}
-            className="h-[50%] rounded-lg"
-          />
-          <Image
-            src={"/home/user-4.jpeg"}
-            alt="hero"
-            width={300}
-            height={200}
-            className="rounded-lg"
-          />
+        <Image
+          src={"/home/nutritionist.jpg"}
+          alt="nutrition"
+          width={800}
+          height={800}
+          className="my-10 rounded-2xl"
+        />
+      </section>
+      <section className="py-20 text-gray-800">
+        <div className="flex flex-col gap-5 px-5 md:px-10 lg:px-20">
+          <h2 className="text-center text-3xl font-semibold">
+            Nutrition On Our Minds
+          </h2>
+          <p className="mx-auto max-w-[900px] text-center text-muted-foreground">
+            Explore insights, innovations, and voices shaping the Grevego
+            movement.
+          </p>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col gap-5 rounded-lg bg-gray-50 p-4">
+              <Image
+                src={"/home/blog.jpg"}
+                width={300}
+                height={100}
+                alt="x"
+                className="h-full w-full rounded-lg object-cover"
+              />
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg font-semibold">
+                  How to Make Your Business More Sustainable: 5 Easy Steps
+                </h3>
+                <p>
+                  Discover practical tips to reduce your environmental impact
+                  and enhance your business’s sustainability.
+                </p>
+                <p className="text-sm text-muted-foreground">July 11, 2025</p>
+              </div>
+              <Link
+                href={"/blog"}
+                className="mt-10 flex max-w-[150px] items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2"
+              >
+                <p className="text-gray-800">Read More</p>
+                <ArrowRightIcon className="w-4 text-gray-800" />
+              </Link>
+            </div>
+            <div className="flex flex-col gap-5 rounded-lg bg-gray-50 p-4">
+              <Image
+                src={"/home/blog.jpg"}
+                width={300}
+                height={100}
+                alt="x"
+                className="h-full w-full rounded-lg object-cover"
+              />
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg font-semibold">
+                  How to Make Your Business More Sustainable: 5 Easy Steps
+                </h3>
+                <p>
+                  Discover practical tips to reduce your environmental impact
+                  and enhance your business’s sustainability.
+                </p>
+                <p className="text-sm text-muted-foreground">July 11, 2025</p>
+              </div>
+              <Link
+                href={"/blog"}
+                className="mt-10 flex max-w-[150px] items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2"
+              >
+                <p className="text-gray-800">Read More</p>
+                <ArrowRightIcon className="w-4 text-gray-800" />
+              </Link>
+            </div>{" "}
+            <div className="flex flex-col gap-5 rounded-lg bg-gray-50 p-4">
+              <Image
+                src={"/home/blog.jpg"}
+                width={300}
+                height={100}
+                alt="x"
+                className="h-full w-full rounded-lg object-cover"
+              />
+              <div className="flex flex-col gap-2">
+                <h3 className="text-lg font-semibold">
+                  How to Make Your Business More Sustainable: 5 Easy Steps
+                </h3>
+                <p>
+                  Discover practical tips to reduce your environmental impact
+                  and enhance your business’s sustainability.
+                </p>
+                <p className="text-sm text-muted-foreground">July 11, 2025</p>
+              </div>
+              <Link
+                href={"/blog"}
+                className="mt-10 flex max-w-[150px] items-center gap-2 rounded-full border border-gray-300 bg-white px-4 py-2"
+              >
+                <p className="text-gray-800">Read More</p>
+                <ArrowRightIcon className="w-4 text-gray-800" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
-
-      <section className="px-5 py-32 md:px-20">
+      <section className="px-5 py-32 pt-0 md:px-20 md:pt-20">
         <div className="flex flex-col items-center gap-7">
           <h2 className="max-w-[1000px] text-center text-2xl font-semibold text-gray-800 md:text-3xl lg:text-3xl">
             Join the Movement for a Healthier, Greener World
@@ -282,9 +394,15 @@ export default  function Home() {
           <div className="relative flex w-full flex-col items-center">
             <div className="flex w-full items-center justify-center gap-10">
               <Button
+                title="Explore Marketplace"
+                variant="primary"
+                onclick={() => router.push("/marketplace")}
+              />
+              <Button
                 title="Join as a Vendor"
                 variant="secondary"
                 onclick={() => router.push("/vendor")}
+                style="py-3"
               />
             </div>
             <Image
