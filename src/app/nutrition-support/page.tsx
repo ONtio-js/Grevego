@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import Spinner from "../_components/Spinner";
 import { nutritionContext, NutritionContextType } from "./NutritionContext";
 
-const page = () => {
+const NutritionPage = () => {
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -189,4 +189,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default NutritionPage;
