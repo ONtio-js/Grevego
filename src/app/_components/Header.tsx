@@ -9,6 +9,7 @@ import {  RxCaretRight } from 'react-icons/rx';
 const Header = () => {
   const [open, setOpen] = React.useState(false);
   const [menu,setMenu] = useState(false);
+  const [orderMenu,setOrderMenu] = useState(false);
   
   const router = useRouter();
   const pathname = usePathname();
@@ -51,9 +52,9 @@ const Header = () => {
         />
         <Button
           variant="primary"
-          secondary={false}
-          title="Join Waitlist"
-          onclick={() => router.push("/waitlist")}
+          secondary
+          title="Try Grevego"
+          onclick={() => {setOrderMenu(true);setOpen(true)}}
         />
       </div>
       <div
@@ -62,29 +63,29 @@ const Header = () => {
       >
         <RiMenu3Fill size={28} className="text-primaryColor" />
       </div>
-      <PartnerLink open={open} onclick={() => setOpen((prev) => !prev)} />
-      <MobileNav menu={menu} onclick={() => setMenu((prev) => !prev)} />
+      <PartnerLink open={open} orderMenu={orderMenu} setOrderMenu={setOrderMenu} setOpen={setOpen} />
+      <MobileNav menu={menu} onclick={() => setMenu((prev) => !prev)} setOrderMenu={setOrderMenu} setOpen={setOpen} orderMenu={orderMenu} />
     </nav>
   );
 }
-const PartnerLink = ({onclick,open}:{onclick: () => void,open:boolean}) => {
+const PartnerLink = ({open,orderMenu,setOrderMenu,setOpen}:{open:boolean,orderMenu:boolean,setOrderMenu: (value: boolean) => void,setOpen: (value: boolean) => void}) => {
   return (
     <div
       className={`fixed left-0 top-0 z-50 h-screen w-screen bg-transparent transition-all delay-1000 ${open ? "block" : "hidden"}`}
-      onClick={onclick}
+      onClick={() => {setOrderMenu(false);setOpen(false)}}
     >
       <ul
         className={` ${open ? "translate-x-0" : "-translate-x-[100%]"} absolute right-40 top-24 rounded-xl bg-white p-10 text-muted-foreground shadow-lg drop-shadow-lg transition-all delay-300`}
         onClick={(e) => e.stopPropagation()}
       >
         <li className="border-b-2 border-muted pb-2">
-          <Link onClick={onclick} href={"/vendor"}>
-            Join as a Vendor
+          <Link onClick={() => {setOrderMenu(false);setOpen(false)}} href={orderMenu ? "/nutrition-support" : "/vendor"} className="flex items-center gap-2">
+            {orderMenu ? "Get Nutrition Support" : "Join as a Vendor"} <RxCaretRight size={30} className="font-semibold" />
           </Link>
         </li>
         <li className="pt-2">
-          <Link onClick={onclick} href={"/agent"}>
-            Become a Delivery Agent
+          <Link onClick={() => {setOrderMenu(false);setOpen(false)}} href={orderMenu ? "/whatsapp" : "/agent"} className="flex items-center gap-2">
+            {orderMenu ? "Order on Whatsapp" : "Become a Delivery Agent"} <RxCaretRight size={30} className="font-semibold" />
           </Link>
         </li>
       </ul>
@@ -93,16 +94,20 @@ const PartnerLink = ({onclick,open}:{onclick: () => void,open:boolean}) => {
 
   
 }
-const MobileNav = ({ menu,onclick }: { onclick: () => void; menu: boolean }) => {
+const MobileNav = ({ menu,onclick,setOrderMenu,setOpen,orderMenu }: { onclick: () => void; menu: boolean,setOrderMenu: (value: boolean) => void,setOpen: (value: boolean) => void,orderMenu: boolean }) => {
   const [drop, setDrop] = useState(false);
+  const [drop2, setDrop2] = useState(false);
   const router = useRouter();
   return (
     <div
-      className={`fixed left-0 top-0 z-50 h-screen w-screen bg-black/20 transition-all duration-300 ease-in-out overflow-scroll ${menu ? "flex justify-center" : "translate-x-[110%]"}`}
-      onClick={() => {onclick();setDrop(false)}}
+      className={`fixed left-0 top-0 z-50 h-screen w-screen overflow-scroll bg-black/20 transition-all duration-300 ease-in-out ${menu ? "flex justify-center" : "translate-x-[110%]"}`}
+      onClick={() => {
+        onclick();
+        setDrop(false);
+      }}
     >
       <ul
-        className={` ${menu ? "translate-x-0" : "translate-x-[110%]"} absolute top-24  flex w-[95%] flex-col items-center gap-5 rounded-xl bg-green-50 p-10 text-muted-foreground shadow-lg drop-shadow-lg transition-transform duration-500 `}
+        className={` ${menu ? "translate-x-0" : "translate-x-[110%]"} absolute top-24 flex w-[95%] flex-col items-center gap-5 rounded-xl bg-green-50 p-10 text-muted-foreground shadow-lg drop-shadow-lg transition-transform duration-500`}
         onClick={(e) => e.stopPropagation()}
       >
         <li className="text-center">
@@ -150,16 +155,33 @@ const MobileNav = ({ menu,onclick }: { onclick: () => void; menu: boolean }) => 
             </li>
           </ul>
         </li>
-        <li className="flex w-full items-center justify-center">
+        <li className="flex w-full flex-col items-center justify-center">
           <Button
-            title="Join Waitlist"
+            title="Try Grevego"
             variant="primary"
-            secondary={false}
-            type="link"
-            url="/vendor"
-            style="w-[100%] py-4 font-medium text-black"
-            onclick={() => {onclick();router.push('/waitlist')}}
+            secondary
+            style="w-[100%]  font-medium text-black hover:bg-none"
+            onclick={() => {
+              
+              setDrop2((prev) => !prev);
+            }}
           />
+          <ul
+            className={`${drop2 ? "flex opacity-100" : "hidden opacity-0"} mt-4 w-[100%] flex-col gap-3 rounded-2xl bg-white p-5 shadow-2xl drop-shadow-xl transition-opacity duration-700 ease-in`}
+          >
+            <li className="flex items-center gap-3 text-[15px]">
+              <Link onClick={onclick} href={"/nutrition-support"}>
+                Get Nutrition Support
+              </Link>
+              <RxCaretRight size={30} className="font-semibold" />
+            </li>
+            <li className="mt-3 flex items-center gap-1 border-t-2 py-3 text-[15px]">
+              <Link onClick={onclick} href={"/whatsapp"}>
+                Order on Whatsapp
+              </Link>{" "}
+              <RxCaretRight size={30} className="font-semibold" />
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

@@ -6,73 +6,18 @@ import Link from "next/link";
 import { TbMailFilled } from "react-icons/tb";
 import { PiTrademarkLight } from "react-icons/pi";
 
-import FeatureCard from "./FeatureCard";
-import Button from "./Button";
-import { useRouter } from "next/navigation";
-import { ArrowRightIcon } from "lucide-react";
 const Footer = () => {
-  const router = useRouter();
   return (
     <>
       <section className="bg-primaryColor py-32">
-        <div className="flex flex-col items-center gap-5 px-5 md:px-10 lg:px-20">
-          <h2 className="text-center text-3xl font-semibold text-white">
-            Grow Your Business & Earn with Grevego
-          </h2>
-          <p className="max-w-[900px] text-center text-white">
-            Join our network of eco-friendly vendors and delivery partners.
-            Whether you sell healthy products or want to deliver with purpose,
-            we’ve got a place for you!
-          </p>
-          <Button
-            title="Become a Partner"
-            variant="secondary"
-            style="text-white border-white mt-10"
-            secondary={false}
-            onclick={() => router.push("/agent")}
-          />
-        </div>
-        <div className="no-scrollbar flex items-center gap-2 overflow-x-scroll pl-5 pt-10 md:justify-center lg:gap-4">
-          <FeatureCard title="Reduce Food Waste" />
-          <FeatureCard title="Support Vendors" />
-          <FeatureCard title="Personalized Nutrition" />
-          <FeatureCard title="Clean Energy Solutions" />
-        </div>
-        <div className="relative my-20 overflow-y-hidden">
-          <div className="no-scrollbar flex items-center gap-4 overflow-x-scroll lg:justify-center">
-            <Image
-              src={"https://res.cloudinary.com/dm2pa4nll/grevego/footer-1.png"}
-              alt="hero"
-              width={600}
-              height={200}
-              className="w-[300px] md:w-full"
-            />
-            <Image
-              src={"https://res.cloudinary.com/dm2pa4nll/grevego/footer-2.png"}
-              alt="hero"
-              width={500}
-              height={200}
-              className="w-[300px] md:w-full"
-            />
-            <Image
-              src={"https://res.cloudinary.com/dm2pa4nll/grevego/footer-3.png"}
-              alt="hero"
-              width={600}
-              height={200}
-              className="w-[300px] md:w-full"
-            />
-          </div>
-        </div>
         <div>
           <div className="mx-auto mb-10 flex max-w-[900px] flex-col items-center gap-5 px-5 md:px-20">
-            <h2 className="text-3xl font-semibold capitalize text-white">
-              success story
+            <h2 className="text-3xl font-semibold capitalize text-white text-center">
+              What People Are Saying About Grevego
             </h2>
             <p className="text-center text-white">
-              At Grevego, sustainability isn’t just a goal—it’s our promise.
-              Through innovative practices and advanced green technology, we are
-              redefining how businesses and individuals can contribute to a
-              healthier planet.
+              Together, we’re building a sustainable future while driving
+              success.
             </p>
           </div>
           <div className="mx-5 flex max-w-[900px] flex-col items-center border-2 border-dashed border-white p-10 md:mx-20 md:p-20 lg:mx-auto">
@@ -99,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-     
+
       <footer className="flex flex-col px-5 py-20 text-muted-foreground md:items-center lg:px-20">
         <div className="grid items-start gap-y-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:max-w-[300px]">

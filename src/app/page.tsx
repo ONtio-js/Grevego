@@ -73,14 +73,6 @@ export default  function Home() {
             Revolutionizing food access through green retailing, smart delivery,
             and AI-powered nutrition guidance.
           </p>
-          <div className="flex w-full flex-col items-center justify-center gap-7 py-14 md:flex-row">
-            <Button
-              title="Join waitlist"
-              variant="primary"
-              onclick={() => router.push("waitlist")}
-              style="w-[250px] md:max-w-[300px] py-4"
-            />
-          </div>
         </div>
         <div className="no-scrollbar flex w-full items-center gap-2 overflow-x-scroll pl-5 pt-10 md:justify-center lg:gap-4">
           <FeatureCard title="Reduce Food Waste" />
@@ -174,7 +166,9 @@ export default  function Home() {
         </div>
         <div className="grid gap-10 px-5 md:px-20 lg:grid-cols-3">
           {features.map((feature) => (
-            <div key={feature.id} className="rounded-xl p-5 shadow-lg">
+            <motion.div key={feature.id} className="rounded-xl p-5 shadow-lg" initial={{ opacity: 0, x: (feature.id + 1) % 2 === 0 ? -100 : 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: (feature.id + 1) % 2 === 0 ? 0.2 : 0.4 }}>
               <Image
                 src={feature.imgUrl}
                 alt={feature.title}
@@ -186,7 +180,7 @@ export default  function Home() {
                 {feature.title}
               </h3>
               <p className="pt-2 text-gray-700">{feature.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -202,10 +196,13 @@ export default  function Home() {
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-          {howItWorks.map((how) => (
-            <div
+          {howItWorks.map((how,index) => (
+            <motion.div
               key={how.id}
               className="relative h-56 overflow-hidden rounded-2xl bg-primaryColor p-5 text-white"
+              initial={{ opacity: 0, x: (index + 1) % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: (index + 1) % 2 === 0 ? 0.2 : 0.4 }}
             >
               <h3 className="text-2xl font-medium">{how.title}</h3>
               <p className="py-2 text-sm">{how.description}</p>
@@ -254,13 +251,18 @@ export default  function Home() {
                   stroke-linecap="round"
                 />
               </svg>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section className="flex flex-col gap-10 px-5 py-20 md:px-10 lg:flex-row lg:items-center lg:px-20">
-        <div className="flex max-w-[600px] flex-col items-start gap-4">
+        <motion.div
+          className="flex max-w-[600px] flex-col items-start gap-4"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-2xl font-semibold text-gray-800 md:text-3xl">
             Talk to a Nutrition Expert
           </h2>
@@ -275,17 +277,23 @@ export default  function Home() {
           <Button
             title="Get Free Consultation"
             variant="primary"
-            onclick={() => router.push("/nutrition")}
+            onclick={() => router.push("/nutrition-support")}
             style="w-[250px] md:max-w-[300px] py-4 mt-5"
           />
-        </div>
-        <Image
-          src={"/home/nutritionist.jpg"}
-          alt="nutrition"
-          width={800}
-          height={800}
-          className="my-10 rounded-2xl"
-        />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Image
+            src={"/home/nutritionist.jpg"}
+            alt="nutrition"
+            width={800}
+            height={800}
+            className="my-10 rounded-2xl"
+          />
+        </motion.div>
       </section>
       <section className="py-20 text-gray-800">
         <div className="flex flex-col gap-5 px-5 md:px-10 lg:px-20">
@@ -378,7 +386,7 @@ export default  function Home() {
           </div>
         </div>
       </section>
-      <section className="px-5 py-32 pt-0 md:px-20 md:pt-20">
+      <section className="px-5 py-32 pb-10 pt-0 md:px-20 md:pt-20">
         <div className="flex flex-col items-center gap-7">
           <h2 className="max-w-[1000px] text-center text-2xl font-semibold text-gray-800 md:text-3xl lg:text-3xl">
             Join the Movement for a Healthier, Greener World
@@ -406,7 +414,7 @@ export default  function Home() {
               />
             </div>
             <Image
-              src={"https://res.cloudinary.com/dm2pa4nll/grevego/globe.png"}
+              src={"/globe.gif"}
               width={800}
               height={800}
               alt="world globe"

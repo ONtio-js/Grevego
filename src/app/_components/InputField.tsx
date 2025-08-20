@@ -1,28 +1,37 @@
-import React from 'react'
+import React from "react";
 
-const InputField = ({label,type,name,onchange,placeholder}:{
-    label:string;
-    type:string;
-    name: string;
-    placeholder:string;
-    onchange:(event: React.ChangeEvent<HTMLInputElement>) => void
+const InputField = ({
+  label,
+  type,
+  name,
+  onchange,
+  placeholder,
+  value,
+}: {
+  label: React.ReactNode;
+  type: string;
+  name: string;
+  placeholder: string;
+  value?: string;
+  onchange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }) => {
   return (
-    <div className='w-full my-1'>
+    <div className="my-1 w-full">
       <label className="block font-medium text-gray-700" htmlFor="">
         {label}
       </label>
-      <div className='border-2 border-gray-200 bg-transparent py-3 rounded-lg mt-1 pl-5 w-full'>
+      <div className="mt-1 w-full rounded-lg border-2 border-gray-200 bg-transparent py-3 pl-5">
         <input
           type={type}
           placeholder={placeholder}
           onChange={onchange}
           name={name}
-          className="border-none bg-transparent outline-none w-full focus:border-none focus:outline-none"
+          value={value}
+          className="w-full border-none bg-transparent outline-none focus:border-none focus:outline-none"
         />
       </div>
     </div>
   );
-}
+};
 
-export default InputField
+export default InputField;
