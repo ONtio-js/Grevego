@@ -84,7 +84,7 @@ const PartnerLink = ({open,orderMenu,setOrderMenu,setOpen}:{open:boolean,orderMe
           </Link>
         </li>
         <li className="pt-2">
-          <Link onClick={() => {setOrderMenu(false);setOpen(false)}} href={orderMenu ? "/whatsapp" : "/agent"} className="flex items-center gap-2">
+          <Link onClick={() => {setOrderMenu(false);setOpen(false)}} href={orderMenu ? "/waitlist" : "/agent"} className="flex items-center gap-2">
             {orderMenu ? "Order on Whatsapp" : "Become a Delivery Agent"} <RxCaretRight size={30} className="font-semibold" />
           </Link>
         </li>
@@ -176,7 +176,7 @@ const MobileNav = ({ menu,onclick,setOrderMenu,setOpen,orderMenu }: { onclick: (
               <RxCaretRight size={30} className="font-semibold" />
             </li>
             <li className="mt-3 flex items-center gap-1 border-t-2 py-3 text-[15px]">
-              <Link onClick={onclick} href={"/whatsapp"}>
+              <Link onClick={onclick} href={"/waitlist"}>
                 Order on Whatsapp
               </Link>{" "}
               <RxCaretRight size={30} className="font-semibold" />
