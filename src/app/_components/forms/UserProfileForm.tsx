@@ -21,10 +21,11 @@ const UserProfileForm = () => {
     console.log(data);
   };
   return (
-    <motion.div className="px-5 md:px-0"
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
+    <motion.div
+      className="px-5 md:px-0"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <h2 className="my-5 mt-10 flex items-center justify-center gap-2 text-center text-2xl font-semibold text-gray-800">
         {" "}

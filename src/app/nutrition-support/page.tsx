@@ -105,8 +105,8 @@ const page = () => {
         Grevego Nutrition Support Intake Form
       </h2>
       <p className="max-w-[500px] text-center text-sm text-gray-500 md:text-base">
-        Let's get to know you better so we can offer personalized and practical
-        guidance tailored to your lifestyle and goals.
+        Let&apos;s get to know you better so we can offer personalized and
+        practical guidance tailored to your lifestyle and goals.
       </p>
       <div className="flex w-full flex-col items-center justify-center gap-4">
         <h4 className="max-w-[500px] text-center text-sm font-semibold text-gray-600 md:text-base">

@@ -10,7 +10,7 @@ import {
   SelectTrigger,
 } from "@/components/ui/select";
 import { SelectLabel, SelectValue } from "@radix-ui/react-select";
-import { nutritionContext  } from "@/app/nutrition-support/NutritionContext";
+import { nutritionContext } from "@/app/nutrition-support/NutritionContext";
 import { motion } from "framer-motion";
 
 const DietaryProfileForm = () => {
@@ -35,12 +35,12 @@ const DietaryProfileForm = () => {
   };
 
   return (
-    <motion.div className="px-5 md:px-0"
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
+    <motion.div
+      className="px-5 md:px-0"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
-      
       <h2 className="my-5 mt-10 flex items-center justify-center gap-2 text-center text-2xl font-semibold text-gray-800">
         {" "}
         <Utensils size={40} className="text-primaryColor" /> Dietary Profile
@@ -90,7 +90,7 @@ const DietaryProfileForm = () => {
           label={
             <>
               <span className="text-gray-700">
-                Anything you'd like to share with your nutritionist?{"  "}
+                Anything you&apos;d like to share with your nutritionist?{"  "}
               </span>
               <span className="text-amber-400">(optional)</span>
             </>
