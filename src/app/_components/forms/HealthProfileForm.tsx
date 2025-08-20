@@ -2,7 +2,7 @@
 import { Heart } from 'lucide-react'
 import React, { useContext, useState } from 'react'
 import InputField from '../InputField'
-import { nutritionContext } from '@/app/nutrition-support/page'
+import { nutritionContext } from '@/app/nutrition-support/NutritionContext'
 import { motion } from 'framer-motion'
 
 const HealthProfileForm = () => {

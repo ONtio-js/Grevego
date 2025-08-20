@@ -10,7 +10,7 @@ import {
   SelectTrigger,
 } from "@/components/ui/select";
 import { SelectLabel, SelectValue } from "@radix-ui/react-select";
-import { nutritionContext } from "@/app/nutrition-support/page";
+import { nutritionContext  } from "@/app/nutrition-support/NutritionContext";
 import { motion } from "framer-motion";
 
 const DietaryProfileForm = () => {

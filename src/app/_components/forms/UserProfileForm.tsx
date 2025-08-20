@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import InputField from "../InputField";
 import { User } from "lucide-react";
-import { nutritionContext } from "@/app/nutrition-support/page";
+import { nutritionContext } from "@/app/nutrition-support/NutritionContext";
 import { motion } from "framer-motion";
 
 const UserProfileForm = () => {
