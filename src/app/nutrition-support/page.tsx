@@ -17,7 +17,7 @@ const NutritionPage = () => {
   const [step, setStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isSuccess, setIsSuccess] = useState<boolean>(true);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [data, setData] = useState<NutritionContextType["data"]>({
     name: "",
     gender: "",
@@ -52,7 +52,7 @@ const NutritionPage = () => {
     Object.entries(data).forEach(([key, value]) => {
       formDataToSend.append(key, value as string);
     });
-    console.log(data);
+
     try {
       const response = await fetch(
         "https://script.google.com/macros/s/AKfycbxaKWRDfohbWXOyee6SwCRrv3XIMrUot0nWGRK4ehRDk8L_kINah1CNVjY-YxNIWI7Slg/exec",
@@ -66,8 +66,8 @@ const NutritionPage = () => {
         },
       );
     
-      setIsSuccess(true);
-      if (response.ok) {
+    
+      if (!response.ok) {
         setIsSuccess(true);
         setData({
           name: "",
