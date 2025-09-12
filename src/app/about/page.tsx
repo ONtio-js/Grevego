@@ -1,11 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Carousel from "../_components/Carousel";
-import ButtonComponent from "./ButtonComponent";
-import { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "About | Grevego",
-};
+
+import { motion } from "framer-motion";
+
 
 const AboutPage = () => {
   const ourDefinition = [
@@ -35,25 +34,18 @@ const AboutPage = () => {
   return (
     <>
       <section className="mt-28 px-8 md:pt-10 lg:-mt-10">
-        <h1 className="mx-auto mt-10 pb-5 text-center text-3xl font-semibold leading-snug md:px-28 md:text-5xl lg:max-w-[650px] lg:px-0">
-          Sustainable Living, one Fresh Product at a Time
-        </h1>
-        <p className="mx-auto text-center text-gray-700 md:px-28 lg:max-w-[700px] lg:px-0">
-          At Grevego, we are building a future where sustainability meets
-          convenience. Our mission is to empower communities with eco-friendly
-          shopping, smarter nutrition, and green technology.
-        </p>
-        <ButtonComponent />
-        <div className="mt-16 flex items-center justify-center">
-          <Image
-            src={
-              "https://res.cloudinary.com/dm2pa4nll/grevego/about/about-hero.png"
-            }
-            width={1000}
-            height={100}
-            alt="about-hero"
-            className="rounded-3xl md:w-[80%]"
-          />
+        <div className="relative mx-auto mt-16 flex md:h-[500px] h-[320px] md:w-[90%] w-full items-center justify-center rounded-3xl bg-[url('https://res.cloudinary.com/dm2pa4nll/grevego/about/about-hero.png')] bg-cover bg-center">
+          <div className="absolute left-0 top-0 h-full w-full rounded-3xl bg-black/70 flex flex-col items-center justify-center gap-10 p-5 md:p-0">
+            <h1 className="mx-auto mt-10 pb-5 text-center text-xl font-semibold leading-snug text-white md:px-28 md:text-5xl lg:max-w-[750px] lg:px-0">
+              Sustainable Living, one Fresh Product at a Time
+            </h1>
+            <p className="mx-auto text-sm md:text-base text-center text-white md:px-28 lg:max-w-[700px] lg:px-0 ">
+              At Grevego, we are building a future where sustainability meets
+              convenience. Our mission is to empower communities with
+              eco-friendly shopping, smarter nutrition, and green technology.
+            </p>
+            {/* <ButtonComponent /> */}
+          </div>
         </div>
       </section>
       <section className="mt-20 bg-primaryColor py-20">
@@ -67,26 +59,56 @@ const AboutPage = () => {
             create a smarter, greener way to access fresh produce while
             minimizing waste and empowering vendors
           </p>
+          <div className="mx-auto mt-16 flex md:w-[75%] w-full flex-col gap-16 md:flex-row">
+            <div className="flex md:w-1/2 w-full flex-col gap-5">
+              <h2 className="text-2xl font-semibold text-white text-center md:text-left">
+                The Grevego Story
+              </h2>
+              <p className="text-white text-center md:text-left">
+                It all started with a simple truth, everyone deserves access to
+                fresh, healthy food, and no good produce should go to waste.
+              </p>
+              <p className="max-w-[1200px] text-white text-center md:text-left">
+                At Grevego, we saw two problems: while many people struggle to
+                eat well, tons of fresh fruits and vegetables go unsold and
+                uneaten every day. Farmers and local vendors lose income, while
+                communities lose access to nutrition. On top of that, food waste
+                harms the planet.
+              </p>
+            </div>
+            <div className="flex md:w-1/2 w-full flex-col gap-5">
+              <h2 className="text-xl font-semibold text-white text-center md:text-left">
+                So we asked: What if we could fix both?
+              </h2>
+              <p className="text-white text-center md:text-left">
+                That’s why we connect health-conscious customers to local
+                vendors of fresh, organic and healthy meal options, freshly and
+                efficiently delivered. We make healthy eating easier with
+                nutrition support and close the circular economy loop with
+                collecting and repurposing organic waste.
+              </p>
+              <p className="max-w-[1200px] text-white">
+                Grevego isn’t just a marketplace—it’s a movement for better
+                nutrition and a greener future.
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
+      <section>
         <div className="pt-32">
           <Carousel />
         </div>
+        
       </section>
-      <section className="px-5 py-20 md:px-10">
-        <div className="flex flex-col items-center gap-7 text-gray-700">
-          <h2 className="text-center text-2xl font-semibold md:text-3xl">
-            Driving Change, One Sustainable Choice at a Time
-          </h2>
-          <p className="max-w-[950px] text-center">
-            At Grevego, we are redefining the future of sustainable shopping by
-            integrating smart technology, eco-friendly logistics, and
-            community-driven solutions
-          </p>
-        </div>
+      <section className="px-5 py-20 pt-10 md:pt-20 md:px-10 mt-20">
+      
         <div className="flex flex-col items-center py-10 text-gray-700">
-          <h2 className="text-2xl font-semibold">Our Mission & Vision</h2>
-          <div className="grid max-w-[800px] gap-10 pt-6 md:grid-cols-2">
-            <div className="group rounded-3xl bg-gray-100/70 p-10 py-14 transition-all duration-300 ease-in-out hover:bg-primaryColor">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-10">Our Mission & Vision</h2>
+          <div className="grid max-w-[1000px] gap-10 pt-6 md:grid-cols-2">
+            <motion.div className="group rounded-3xl bg-gray-100/70 p-10 py-14 transition-all duration-300 ease-in-out hover:bg-primaryColor h-[300px] flex flex-col items-center justify-center" initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.2 }}>
               <h3 className="py-2 text-center text-lg font-semibold group-hover:text-white">
                 Mission Statement
               </h3>
@@ -94,8 +116,10 @@ const AboutPage = () => {
                 To reduce malnutrition and food waste by connecting consumers to
                 fresh hygienic products while improving market access linkage.
               </p>
-            </div>
-            <div className="group rounded-3xl bg-gray-100/70 p-10 py-14 transition-all duration-300 ease-in-out hover:bg-primaryColor">
+            </motion.div>
+            <motion.div className="group rounded-3xl bg-gray-100/70 p-10 py-14 transition-all duration-300 ease-in-out hover:bg-primaryColor h-[300px] flex flex-col items-center justify-center" initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.2 }}>
               <h3 className="py-2 text-center text-lg font-semibold group-hover:text-white">
                 Vision Statement
               </h3>
@@ -103,14 +127,14 @@ const AboutPage = () => {
                 To create a healthier, greener world by empowering communities
                 to embrace innovation and a sustainable lifestyle.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="mt-20 flex flex-col items-center gap-7 text-gray-700">
-          <h2 className="text-center text-2xl font-semibold md:text-3xl">
+          <h2 className="text-center text-2xl font-semibold md:text-3xl max-w-[400px]">
             Guiding Principles That Define Grevego
           </h2>
-          <p className="max-w-[950px] text-center">
+          <p className="max-w-[1300px] text-center">
             At Grevego, our values drive every decision we make. From
             eco-friendly solutions to cutting-edge technology, we are committed
             to creating a healthier, more sustainable future. We believe in
@@ -121,9 +145,12 @@ const AboutPage = () => {
         <div className="grid gap-4 pt-20 md:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:px-20">
           {ourDefinition.map(
             (how: { id: number; title: string; description: string }) => (
-              <div
+              <motion.div
                 key={how.id}
                 className="relative h-56 overflow-hidden rounded-2xl bg-primaryColor p-5 text-white"
+                initial={{ opacity: 0, x: (how.id + 1) % 2 === 0 ? -100 : 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: (how.id + 1) % 2 === 0 ? 0.2 : 0.4 }}
               >
                 <h3 className="text-2xl font-medium">{how.title}</h3>
                 <p className="py-2 text-sm">{how.description}</p>
@@ -172,7 +199,7 @@ const AboutPage = () => {
                     stroke-linecap="round"
                   />
                 </svg>
-              </div>
+              </motion.div>
             ),
           )}
         </div>
@@ -188,7 +215,9 @@ const AboutPage = () => {
             change.
           </p>
           <Image
-            src={"https://res.cloudinary.com/dm2pa4nll/grevego/about/teamall.png"}
+            src={
+              "https://res.cloudinary.com/dm2pa4nll/grevego/about/teamall.png"
+            }
             width={1000}
             height={200}
             alt="our team"

@@ -8,7 +8,7 @@ const InputField = ({
   placeholder,
   value,
 }: {
-  label: React.ReactNode;
+  label?: string;
   type: string;
   name: string;
   placeholder: string;
@@ -17,7 +17,7 @@ const InputField = ({
 }) => {
   return (
     <div className="my-1 w-full">
-      <label className="block font-medium text-gray-700" htmlFor="">
+      <label className="block font-medium text-gray-600 capitalize" htmlFor="">
         {label}
       </label>
       <div className="mt-1 w-full rounded-lg border-2 border-gray-200 bg-transparent py-3 pl-5">

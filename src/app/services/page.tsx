@@ -1,10 +1,8 @@
+"use client";
 import React from "react";
-import Button from "../_components/Button";
 import Image from "next/image";
-import { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "Services | Grevego",
-};
+import { motion } from "framer-motion";
+
 const page = () => {
   const ourDefinition = [
     {
@@ -31,58 +29,21 @@ const page = () => {
   ];
   return (
     <>
-      <section className="pt-10 md:pt-10 md:px-10 mt-20 lg:-mt-10 lg:px-0">
-        <div className="md:mt-10 flex flex-col items-center gap-6 pb-20  ">
-          <h2 className="text-center text-3xl font-semibold text-gray-700 px-10  sm:px-20 md:text-5xl md:leading-[3rem] lg:max-w-[800px]">
-            <span className="text-[#ffb84d]">Innovative solutions</span> for a
-            Greener Future
-          </h2>
-          <p className="max-w-[800px] px-5 text-center text-gray-700 md:px-0">
-            At Grevego, we blend cutting-edge technology with sustainability to
-            create a future where healthy living is effortless and eco-conscious
-            choices are second nature.
-          </p>
-          <Button
-            variant="primary"
-            title="Explore Our Services"
-            style=" w-[250px] py-4 rounded-full mt-10"
-            type="link"
-          />
+      <section className="mt-20 pt-10 md:px-10 md:pt-10 lg:-mt-5 lg:px-0">
+        <div className="relative mx-auto flex w-[90%] md:h-[500px] h-[350px] flex-col items-center gap-6 rounded-3xl bg-[url('https://res.cloudinary.com/dm2pa4nll/grevego/service/service-hero-4.png')] bg-cover bg-center pb-20 md:mt-10">
+          <div className="absolute left-0 top-0 h-full w-full rounded-3xl bg-black/70 flex flex-col items-center justify-center gap-10 p-5 md:p-0">
+            <h2 className="md:px-10 text-center text-2xl font-semibold text-white sm:px-20 md:text-5xl md:leading-[3rem] lg:max-w-[800px]">
+              <span className="text-[#ffb84d]">Innovative solutions</span> for a
+              Greener Future
+            </h2>
+            <p className="max-w-[800px] md:max-w-[500px]  text-center text-white md:px-0">
+              At Grevego, we blend cutting-edge technology with sustainability
+              to create a future where healthy living is effortless and
+              eco-conscious choices are second nature.
+            </p>
+          </div>
         </div>
-        <div className="no-scrollbar mb-20 flex max-h-96 items-center gap-4 overflow-x-scroll px-20 md:-mx-12 lg:justify-center lg:gap-8">
-          <Image
-            src={"/home/vendor.svg"}
-            alt="agent"
-            width={500}
-            height={100}
-            className="h-[309px] w-[260px] rounded-3xl"
-          />
-          <Image
-            src={"https://res.cloudinary.com/dm2pa4nll/grevego/service/service-hero-2.jpeg"}
-            alt="agent"
-            width={190}
-            height={100}
-            className="h-44 rounded-3xl lg:w-[20%]"
-          />
-          <Image
-            src={
-              "https://res.cloudinary.com/dm2pa4nll/grevego/service/service-hero-3.jpeg"
-            }
-            alt="agent"
-            width={500}
-            height={100}
-            className="h-[309px] w-[260px] rounded-3xl"
-          />
-          <Image
-            src={
-              "https://res.cloudinary.com/dm2pa4nll/grevego/service/service-hero-4.png"
-            }
-            alt="agent"
-            width={190}
-            height={100}
-            className="h-48 rounded-3xl lg:w-[20%]"
-          />
-        </div>
+       
       </section>
       <section className="px-5 py-20 md:px-10 lg:px-20">
         <div>
@@ -94,7 +55,7 @@ const page = () => {
             solutions
           </p>
         </div>
-        <div className="mt-28 flex flex-col items-center justify-between gap-10 rounded-3xl bg-primaryColor/10 p-5 py-10 md:flex-row lg:gap-40 lg:p-10">
+        <div className="mt-20 flex flex-col items-center justify-between gap-10 rounded-3xl bg-primaryColor/10 p-5 py-10 md:flex-row lg:gap-40 lg:p-10">
           <div className="flex max-w-[550px] flex-col gap-3 text-gray-700">
             <h3 className="text-xl font-bold md:text-3xl">
               Cold Last-Mile Delivery
@@ -108,7 +69,9 @@ const page = () => {
               waste and carbon emissions.
             </p>
           </div>
-          <div>
+          <motion.div initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}>
             <Image
               src={
                 "https://res.cloudinary.com/dm2pa4nll/grevego/service/service-1.png"
@@ -118,7 +81,7 @@ const page = () => {
               height={100}
               className="rounded-3xl"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="my-24 flex flex-col items-center gap-5 gap-y-10 rounded-3xl bg-primaryColor/10 px-5 py-10 transition-all delay-0 ease-linear hover:-translate-x-1 md:flex-row-reverse lg:gap-40 lg:p-10">
           <div className="flex max-w-[550px] flex-col gap-3 text-gray-700">
@@ -134,7 +97,9 @@ const page = () => {
               well-being.
             </p>
           </div>
-          <div>
+          <motion.div initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}>
             <Image
               src={
                 "https://res.cloudinary.com/dm2pa4nll/grevego/service/service-2.png"
@@ -144,7 +109,7 @@ const page = () => {
               height={100}
               className="rounded-3xl"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="flex flex-col items-center gap-y-10 rounded-3xl bg-primaryColor/10 px-5 py-10 transition-all delay-0 ease-linear hover:translate-x-1 md:flex-row lg:gap-40 lg:p-10">
           <div className="flex max-w-[550px] flex-col gap-3 text-gray-700">
@@ -157,7 +122,10 @@ const page = () => {
               loop on sustainability and minimizing environmental impact.
             </p>
           </div>
-          <div>
+          <motion.div initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}>
+
             <Image
               src={
                 "https://res.cloudinary.com/dm2pa4nll/grevego/service/service-3.png"
@@ -167,7 +135,7 @@ const page = () => {
               height={100}
               className="rounded-3xl"
             />
-          </div>
+          </motion.div>
         </div>
         <div className="mt-32 flex flex-col items-center gap-7 text-gray-700">
           <h2 className="text-center text-3xl font-semibold md:max-w-[400px] lg:w-full">
@@ -182,60 +150,65 @@ const page = () => {
           </p>
         </div>
         <div className="grid gap-4 pt-20 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {ourDefinition.map((how: {id:number;title:string;description:string}) => (
-            <div
-              key={how.id}
-              className="relative h-56 overflow-hidden rounded-2xl bg-primaryColor p-5 text-white"
-            >
-              <h3 className="text-2xl font-medium">{how.title}</h3>
-              <p className="py-2 text-sm">{how.description}</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="80"
-                viewBox="0 0 107 108"
-                fill="none"
-                className="absolute -right-2 bottom-0"
+          {ourDefinition.map(
+            (how: { id: number; title: string; description: string }) => (
+              <motion.div
+                key={how.id}
+                className="relative h-56 overflow-hidden rounded-2xl bg-primaryColor p-5 text-white"
+                initial={{ opacity: 0, x: (how.id + 1) % 2 === 0 ? -100 : 100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: (how.id + 1) % 2 === 0 ? 0.2 : 0.4 }}
               >
-                <path
-                  d="M31.5644 31.9999L129.627 158.957"
-                  stroke="#CEDDD0"
-                  stroke-width="62.6795"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="80"
-                viewBox="0 0 107 108"
-                fill="none"
-                className="absolute -right-14 top-24"
-              >
-                <path
-                  d="M31.5644 31.9999L129.627 158.957"
-                  stroke="#CEDDD0"
-                  stroke-width="62.6795"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="80"
-                viewBox="0 0 107 108"
-                fill="none"
-                className="absolute -bottom-10 right-12"
-              >
-                <path
-                  d="M31.5644 31.9999L129.627 158.957"
-                  stroke="#CEDDD0"
-                  stroke-width="62.6795"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </div>
-          ))}
+                <h3 className="text-2xl font-medium">{how.title}</h3>
+                <p className="py-2 text-sm">{how.description}</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="80"
+                  viewBox="0 0 107 108"
+                  fill="none"
+                  className="absolute -right-2 bottom-0"
+                >
+                  <path
+                    d="M31.5644 31.9999L129.627 158.957"
+                    stroke="#CEDDD0"
+                    stroke-width="62.6795"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="80"
+                  viewBox="0 0 107 108"
+                  fill="none"
+                  className="absolute -right-14 top-24"
+                >
+                  <path
+                    d="M31.5644 31.9999L129.627 158.957"
+                    stroke="#CEDDD0"
+                    stroke-width="62.6795"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="80"
+                  viewBox="0 0 107 108"
+                  fill="none"
+                  className="absolute -bottom-10 right-12"
+                >
+                  <path
+                    d="M31.5644 31.9999L129.627 158.957"
+                    stroke="#CEDDD0"
+                    stroke-width="62.6795"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </motion.div>
+            ),
+          )}
         </div>
       </section>
     </>

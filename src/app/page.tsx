@@ -77,8 +77,8 @@ export default  function Home() {
         <div className="no-scrollbar flex w-full items-center gap-2 overflow-x-scroll pl-5 pt-10 md:justify-center lg:gap-4">
           <FeatureCard title="Reduce Food Waste" />
           <FeatureCard title="Support Vendors" />
-          <FeatureCard title="Personalized Nutrition" />
-          <FeatureCard title="Clean Energy Solutions" />
+          <FeatureCard title="Smarter Nutrition" />
+          <FeatureCard title="Greener Living" />
         </div>
         <div className="no-scrollbar relative my-16 w-full overflow-y-hidden">
           <div className="no-scrollbar hidden items-center gap-3 overflow-y-hidden overflow-x-scroll sm:flex md:gap-7 lg:justify-center">
@@ -118,40 +118,7 @@ export default  function Home() {
         </div>
       </section>
       {/* end of hero section */}
-      <section>
-        <div className="flex flex-col items-center gap-5 px-5 py-5 md:py-10 lg:px-20">
-          <h2 className="text-xl font-semibold capitalize text-gray-800 md:text-2xl">
-            The Grevego Story
-          </h2>
-          <p className="text-gray-700">
-            It all started with a simple truth, everyone deserves access to
-            fresh, healthy food, and no good produce should go to waste.
-          </p>
-          <p className="max-w-[1200px] text-center text-gray-700">
-            At Grevego, we saw two problems: while many people struggle to eat
-            well, tons of fresh fruits and vegetables go unsold and uneaten
-            every day. Farmers and local vendors lose income, while communities
-            lose access to nutrition. On top of that, food waste harms the
-            planet.
-          </p>
-          <div className="flex flex-col items-center gap-5">
-            <h5 className="font-semibold text-gray-700">
-              So we asked: What if we could fix both?
-            </h5>
-            <p className="max-w-[1200px] text-center text-gray-700">
-              That’s why we connect health-conscious customers to local vendors
-              of fresh, organic and healthy meal options, freshly and
-              efficiently delivered. We make healthy eating easier with
-              nutrition support and close the circular economy loop with
-              collecting and repurposing organic waste.
-            </p>
-            <p className="max-w-[1200px] text-center text-gray-700">
-              Grevego isn’t just a marketplace—it’s a movement for better
-              nutrition and a greener future.
-            </p>
-          </div>
-        </div>
-      </section>
+   
       {/* beginning of features section */}
       <section className="pt-10">
         <div className="flex flex-col items-center gap-5 py-5 md:py-10">

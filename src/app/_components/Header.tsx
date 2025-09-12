@@ -14,18 +14,13 @@ const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
   return (
-    <nav className="flex  w-full  items-center justify-between px-5 py-4 lg:py-6 xl:px-20 bg-white  z-20 fixed lg:relative">
+    <nav className="fixed z-20 flex w-full items-center justify-between bg-white px-5 py-4 lg:relative lg:py-6 xl:px-20">
       <div className="lg:gap-x-13 flex items-center gap-x-5">
         <Logo width={100} height={100} />
 
         <ul
           className={`ml-5 hidden items-center gap-x-5 text-sm text-muted-foreground lg:flex lg:text-base xl:text-lg`}
         >
-          <li
-            className={`${pathname === "/" ? "font-medium text-primaryColor" : ""}`}
-          >
-            <Link href={"/"}>Home</Link>
-          </li>
           <li
             className={`${pathname === "/about" ? "font-medium text-primaryColor" : ""}`}
           >
@@ -35,6 +30,16 @@ const Header = () => {
             className={`${pathname === "/services" ? "font-medium text-primaryColor" : ""}`}
           >
             <Link href={"/services"}>Services</Link>
+          </li>
+          <li
+            className={`${pathname === "/how-it-works" ? "font-medium text-primaryColor" : ""}`}
+          >
+            <Link href={"/how-it-works"}>How it works</Link>
+          </li>
+          <li
+            className={`${pathname === "/blogs" ? "font-medium text-primaryColor" : ""}`}
+          >
+            <Link href={"/blogs"}>Blogs</Link>
           </li>
           <li
             className={`${pathname === "/contact" ? "font-medium text-primaryColor" : ""}`}
@@ -54,7 +59,10 @@ const Header = () => {
           variant="primary"
           secondary
           title="Try Grevego"
-          onclick={() => {setOrderMenu(true);setOpen(true)}}
+          onclick={() => {
+            setOrderMenu(true);
+            setOpen(true);
+          }}
         />
       </div>
       <div
@@ -63,8 +71,19 @@ const Header = () => {
       >
         <RiMenu3Fill size={28} className="text-primaryColor" />
       </div>
-      <PartnerLink open={open} orderMenu={orderMenu} setOrderMenu={setOrderMenu} setOpen={setOpen} />
-      <MobileNav menu={menu} onclick={() => setMenu((prev) => !prev)} setOrderMenu={setOrderMenu} setOpen={setOpen} orderMenu={orderMenu} />
+      <PartnerLink
+        open={open}
+        orderMenu={orderMenu}
+        setOrderMenu={setOrderMenu}
+        setOpen={setOpen}
+      />
+      <MobileNav
+        menu={menu}
+        onclick={() => setMenu((prev) => !prev)}
+        setOrderMenu={setOrderMenu}
+        setOpen={setOpen}
+        orderMenu={orderMenu}
+      />
     </nav>
   );
 }
@@ -116,13 +135,23 @@ const MobileNav = ({ menu,onclick,setOrderMenu,setOpen,orderMenu }: { onclick: (
           </Link>
         </li>
         <li className="text-center">
+          <Link onClick={onclick} href={"/about"}>
+            About Us
+          </Link>
+        </li>
+        <li className="text-center">
           <Link onClick={onclick} href={"/services"}>
             Services
           </Link>
         </li>
         <li className="text-center">
-          <Link onClick={onclick} href={"/about"}>
-            About Us
+          <Link onClick={onclick} href={"/how-it-works"}>
+            How it works
+          </Link>
+        </li>
+        <li className="text-center">
+          <Link onClick={onclick} href={"/blogs"}>
+            Blogs
           </Link>
         </li>
         <li className="text-center">

@@ -29,11 +29,11 @@ const UserProfileForm = () => {
     >
       <h2 className="my-5 mt-10 flex items-center justify-center gap-2 text-center text-2xl font-semibold text-gray-800">
         {" "}
-        <User size={40} className="text-primaryColor" /> User Profile
+         Basic Information
       </h2>
       <div className="flex flex-col gap-6">
         <InputField
-          label="name"
+          label="Name"
           type="text"
           placeholder="Type your Name"
           name="name"
@@ -57,12 +57,12 @@ const UserProfileForm = () => {
           value={data.gender}
         />
         <InputField
-          label="occupation"
+          label="location"
           type="text"
-          placeholder="Type your Occupation"
-          name="occupation"
+          placeholder="Type your city/Area"
+          name="location"
           onchange={handleChange}
-          value={data.occupation}
+          value={data.location}
         />
       </div>
     </motion.div>

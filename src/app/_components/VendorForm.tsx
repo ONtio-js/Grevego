@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import InputField from "./InputField";
 import Button from "./Button";
-import axios from "axios";
 import Spinner from "./Spinner";
 const VendorForm = () => {
   const [formData, setFormData] = useState({
@@ -34,14 +33,12 @@ const VendorForm = () => {
       return;
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setErrorMessage("Please enter a valid email address");
       return;
     }
 
-    // Validate phone number (basic validation)
     const phoneRegex = /^\+?[\d\s-]{10,}$/;
     if (!phoneRegex.test(formData.phone)) {
       setErrorMessage("Please enter a valid phone number");
@@ -66,12 +63,10 @@ const VendorForm = () => {
         },
       );
 
-      // Since we're using no-cors mode, we'll assume success if we get here
       setSMessage(
         "You're on the list! We'll keep you updated with exclusive perks and launch details soon. 🚀",
       );
 
-      // Clear form data
       setFormData({
         name: "",
         email: "",
@@ -79,7 +74,6 @@ const VendorForm = () => {
         location: "",
       });
 
-      // Clear the actual form inputs
       const form = event.target as HTMLFormElement;
       form.reset();
     } catch (error) {
