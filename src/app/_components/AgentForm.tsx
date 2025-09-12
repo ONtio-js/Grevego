@@ -104,7 +104,7 @@ const AgentForm = () => {
       {isLoading && <Spinner />}
       <InputField
         label=" Name"
-        placeholder="Type Your Business name"
+        placeholder="Type Your name"
         type="text"
         name="name"
         onchange={handleChange}

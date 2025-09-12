@@ -39,7 +39,7 @@ const Header = () => {
           <li
             className={`${pathname === "/blogs" ? "font-medium text-primaryColor" : ""}`}
           >
-            <Link href={"/blogs"}>Blogs</Link>
+            <Link href={"/blogs"}>Blog</Link>
           </li>
           <li
             className={`${pathname === "/contact" ? "font-medium text-primaryColor" : ""}`}
@@ -151,7 +151,7 @@ const MobileNav = ({ menu,onclick,setOrderMenu,setOpen,orderMenu }: { onclick: (
         </li>
         <li className="text-center">
           <Link onClick={onclick} href={"/blogs"}>
-            Blogs
+            Blog
           </Link>
         </li>
         <li className="text-center">

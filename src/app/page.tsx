@@ -70,8 +70,8 @@ export default  function Home() {
             Healthy Food, Sustainable Future
           </motion.h1>
           <p className="text-center text-sm text-gray-700">
-            Revolutionizing food access through green retailing, smart delivery,
-            and AI-powered nutrition guidance.
+            Improving wellness and nutrition in Africa through green retailing
+            and smart support.
           </p>
         </div>
         <div className="no-scrollbar flex w-full items-center gap-2 overflow-x-scroll pl-5 pt-10 md:justify-center lg:gap-4">
@@ -118,7 +118,7 @@ export default  function Home() {
         </div>
       </section>
       {/* end of hero section */}
-   
+
       {/* beginning of features section */}
       <section className="pt-10">
         <div className="flex flex-col items-center gap-5 py-5 md:py-10">
@@ -133,9 +133,19 @@ export default  function Home() {
         </div>
         <div className="grid gap-10 px-5 md:px-20 lg:grid-cols-3">
           {features.map((feature) => (
-            <motion.div key={feature.id} className="rounded-xl p-5 shadow-lg" initial={{ opacity: 0, x: (feature.id + 1) % 2 === 0 ? -100 : 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: (feature.id + 1) % 2 === 0 ? 0.2 : 0.4 }}>
+            <motion.div
+              key={feature.id}
+              className="rounded-xl p-5 shadow-lg"
+              initial={{
+                opacity: 0,
+                x: (feature.id + 1) % 2 === 0 ? -100 : 100,
+              }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: (feature.id + 1) % 2 === 0 ? 0.2 : 0.4,
+              }}
+            >
               <Image
                 src={feature.imgUrl}
                 alt={feature.title}
@@ -163,13 +173,16 @@ export default  function Home() {
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-          {howItWorks.map((how,index) => (
+          {howItWorks.map((how, index) => (
             <motion.div
               key={how.id}
               className="relative h-56 overflow-hidden rounded-2xl bg-primaryColor p-5 text-white"
               initial={{ opacity: 0, x: (index + 1) % 2 === 0 ? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: (index + 1) % 2 === 0 ? 0.2 : 0.4 }}
+              transition={{
+                duration: 0.5,
+                delay: (index + 1) % 2 === 0 ? 0.2 : 0.4,
+              }}
             >
               <h3 className="text-2xl font-medium">{how.title}</h3>
               <p className="py-2 text-sm">{how.description}</p>
