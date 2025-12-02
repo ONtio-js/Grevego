@@ -22,29 +22,34 @@ const Header = () => {
           className={`ml-5 hidden items-center gap-x-5 text-sm text-muted-foreground lg:flex lg:text-base xl:text-lg`}
         >
           <li
-            className={`${pathname === "/about" ? "font-medium text-primaryColor" : ""}`}
+            className={`${pathname === "/about" ? "font-medium text-primaryColor" : ""} group overflow-hidden `}
           >
             <Link href={"/about"}>About Us</Link>
+            <span className="text-primaryColor w-full h-[2px] bg-primaryColor block translate-x-[100%] translate-y-0  group-hover:translate-x-0 transition-all duration-300 ease-in-out"></span>
           </li>
           <li
-            className={`${pathname === "/services" ? "font-medium text-primaryColor" : ""}`}
+            className={`${pathname === "/services" ? "font-medium text-primaryColor" : ""} group overflow-hidden `}
           >
             <Link href={"/services"}>Services</Link>
+            <span className="text-primaryColor w-full h-[2px] bg-primaryColor block translate-x-[100%] translate-y-0  group-hover:translate-x-0 transition-all duration-300 ease-in-out"></span>
           </li>
           <li
-            className={`${pathname === "/how-it-works" ? "font-medium text-primaryColor" : ""}`}
+            className={`${pathname === "/how-it-works" ? "font-medium text-primaryColor" : ""} group overflow-hidden `}
           >
             <Link href={"/how-it-works"}>How it works</Link>
+            <span className="text-primaryColor w-full h-[2px] bg-primaryColor block translate-x-[100%] translate-y-0  group-hover:translate-x-0 transition-all duration-300 ease-in-out"></span>
           </li>
           <li
-            className={`${pathname === "/blogs" ? "font-medium text-primaryColor" : ""}`}
+            className={`${pathname === "/blogs" ? "font-medium text-primaryColor" : ""} group overflow-hidden `}
           >
             <Link href={"/blogs"}>Blog</Link>
+            <span className="text-primaryColor w-full h-[2px] bg-primaryColor block translate-x-[100%] translate-y-0  group-hover:translate-x-0 transition-all duration-300 ease-in-out"></span>
           </li>
           <li
-            className={`${pathname === "/contact" ? "font-medium text-primaryColor" : ""}`}
+            className={`${pathname === "/contact" ? "font-medium text-primaryColor" : ""} group overflow-hidden `}
           >
             <Link href={"/contact"}>Contact Us</Link>
+            <span className="text-primaryColor w-full h-[2px] bg-primaryColor block translate-x-[100%] translate-y-0  group-hover:translate-x-0 transition-all duration-300 ease-in-out"></span>
           </li>
         </ul>
       </div>

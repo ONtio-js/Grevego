@@ -8,53 +8,53 @@ import HeaderCarousel from "./_components/HeaderCarousel";
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
 export default  function Home() {
-  const features = [
-    {
-      id: 1,
-      title: "Green and Cold Distribution",
-      description:
-        "We deliver organic produce and healthy meals from trusted vendors to your doorstep—fresh, cool, and sustainably.",
-      imgUrl: "/home/features/feature1.jpg",
-    },
-    {
-      id: 2,
-      title: "Nutrition Support",
-      description:
-        "Personalized nutrition guidance to help you eat better, live healthier, and feel your best.",
-      imgUrl: "/home/features/feature2.jpg",
-    },
-    {
-      id: 3,
-      title: "Circular Economy",
-      description:
-        "Turning food waste into green energy and organic fertilizer—closing the loop for a healthier planet.",
-      imgUrl: "/home/features/feature3.jpg",
-    },
-  ];
-  const howItWorks = [
-    {
-      id: 1,
-      title: "Discover",
-      description: " Identify nutrition needs and find products and vendors.",
-    },
-    {
-      id: 2,
-      title: "Plan",
-      description: "Get smart nutrition advice and suggestions.",
-    },
-    {
-      id: 3,
-      title: "Shop",
-      description:
-        "Instantly order or schedule your salads and smoothies from your favorite vendors effortlessly.",
-    },
-    {
-      id: 4,
-      title: "Deliver",
-      description:
-        "Receive fresh product delivery at your doorstep, powered by cold last mile delivery.",
-    },
-  ];
+ const features = [
+   {
+     id: 1,
+     title: "Green and Cold Distribution",
+     description:
+       "We deliver organic produce and healthy meals from trusted vendors to your doorstep—fresh, cool, and sustainably.",
+     imgUrl: "/home/features/feature1.jpg",
+   },
+   {
+     id: 2,
+     title: "Nutrition Support",
+     description:
+       "Personalized nutrition guidance to help you eat better, live healthier, and feel your best.",
+     imgUrl: "/home/features/feature2.jpg",
+   },
+   {
+     id: 3,
+     title: "Circular Economy",
+     description:
+       "Turning food waste into green energy and organic fertilizer—closing the loop for a healthier planet.",
+     imgUrl: "/home/features/feature3.jpg",
+   },
+ ];
+ const howItWorks = [
+   {
+     id: 1,
+     title: "Discover",
+     description: " Identify nutrition needs and find products and vendors.",
+   },
+   {
+     id: 2,
+     title: "Plan",
+     description: "Get smart nutrition advice and suggestions.",
+   },
+   {
+     id: 3,
+     title: "Shop",
+     description:
+       "Instantly order or schedule your salads and smoothies from your favorite vendors effortlessly.",
+   },
+   {
+     id: 4,
+     title: "Deliver",
+     description:
+       "Receive fresh product delivery at your doorstep, powered by cold last mile delivery.",
+   },
+ ];
   const router = useRouter();
   return (
     <>

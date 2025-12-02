@@ -5,10 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { TbMailFilled } from "react-icons/tb";
 import { PiTrademarkLight } from "react-icons/pi";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
   return (
     <>
+      {pathname !== "/hub" && (
       <section className="bg-primaryColor py-32">
         <div>
           <div className="mx-auto mb-10 flex max-w-[900px] flex-col items-center gap-5 px-5 md:px-20">
@@ -44,6 +47,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
+      )}
 
       <footer className="flex flex-col px-5 py-20 text-muted-foreground md:items-center lg:px-20">
         <div className="grid items-start gap-y-10 md:grid-cols-2 lg:grid-cols-4">
@@ -66,31 +70,31 @@ const Footer = () => {
             <ul className="flex flex-col gap-y-3">
               <h3 className="text-lg font-semibold capitalize">discover</h3>
               <li>
-                <Link href={"/about"}>About us</Link>
+                <Link href={"/about"} className="hover:text-primaryColor hover:font-medium transition-all duration-300 ease-in-out">About us</Link>
               </li>
               <li>
-                <Link href={"/blogs"}>Blog</Link>
+                <Link href={"/blogs"} className="hover:text-primaryColor hover:font-medium transition-all duration-300 ease-in-out">Blog</Link>
               </li>
               <li>
-                <Link href={"/contact"}>Contact us</Link>
+                <Link href={"/contact"} className="hover:text-primaryColor hover:font-medium transition-all duration-300 ease-in-out">Contact us</Link>
               </li>
             </ul>
             <ul className="flex flex-col gap-y-3">
               <h3 className="text-lg font-semibold capitalize">Services</h3>
               <li>
-                <Link href={"/market"}>Explore market place</Link>
+                <Link href={"/market"} className="hover:text-primaryColor hover:font-medium transition-all duration-300 ease-in-out">Explore market place</Link>
               </li>
               <li>
-                <Link href={"/vendor"}>Join as a vendor</Link>
+                <Link href={"/vendor"} className="hover:text-primaryColor hover:font-medium transition-all duration-300 ease-in-out">Join as a vendor</Link>
               </li>
             </ul>
             <ul className="flex flex-col gap-3">
               <h3 className="text-lg font-semibold capitalize">Legal</h3>
               <li>
-                <Link href={"/privacy"}>Privacy policy</Link>
+                <Link href={"/privacy"} className="hover:text-primaryColor hover:font-medium transition-all duration-300 ease-in-out">Privacy policy</Link>
               </li>
               <li>
-                <Link href={"/terms"}>Terms of use</Link>
+                <Link href={"/terms"} className="hover:text-primaryColor hover:font-medium transition-all duration-300 ease-in-out">Terms of use</Link>
               </li>
             </ul>
             <div className="mt-10 flex flex-col gap-y-3 md:col-span-2 md:mt-0">

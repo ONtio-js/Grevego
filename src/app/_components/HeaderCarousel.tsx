@@ -8,8 +8,6 @@ import "swiper/css/navigation";
 import Image from "next/image";
 
 const HeaderCarousel = () => {
-
-
   const slides = [
     {
       src: "https://res.cloudinary.com/dm2pa4nll/grevego/hero/hero-1.png",
@@ -25,23 +23,30 @@ const HeaderCarousel = () => {
     },
   ];
 
-
-
   return (
-    <div
-      className="relative min-w-[1400px] overflow-hidden sm:hidden "
- 
-    >
+    <div className="relative w-full overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
+        loop={true}
+        speed={1000}
+        slidesPerView={1.33}
+        spaceBetween={16}
+      
         navigation={false}
         className="mySwiper"
+        centeredSlides={false}
       >
         {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <Image src={slide.src} alt={slide.alt} width={300} height={200} className="w-[38%] h-full object-cover" />
+          <SwiperSlide key={index} className="flex items-center justify-center">
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              width={1200}
+              height={600}
+              className={`h-auto w-full object-contain ${index === 0 ? "translate-x-0" : index === 1 ? "translate-y-[32px]" : "translate-x-0"}`}
+            /> 
           </SwiperSlide>
         ))}
       </Swiper>

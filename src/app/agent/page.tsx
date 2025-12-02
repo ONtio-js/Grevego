@@ -157,7 +157,7 @@ const VendorPage = () => {
       <section className="lg:px-20">
         <div className="py-10">
           <h2 className="py-5 text-center text-2xl font-semibold text-gray-700 md:text-4xl">
-            Why Choose Grevego
+            Why Deliver with Grevego
           </h2>
           <p className="text-center text-gray-700">
             More sales, easy management, and eco-friendly delivery, sell smarter
