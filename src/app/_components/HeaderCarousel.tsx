@@ -29,24 +29,24 @@ const HeaderCarousel = () => {
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        
         speed={1000}
         slidesPerView={1.33}
         spaceBetween={16}
-      
         navigation={false}
         className="mySwiper"
         centeredSlides={false}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="flex items-center justify-center">
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              width={1200}
-              height={600}
-              className={`h-auto w-full object-contain ${index === 0 ? "translate-x-0" : index === 1 ? "translate-y-[32px]" : "translate-x-0"}`}
-            /> 
+            <div className="relative w-full h-full">
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                width={1200}
+                height={600}
+                className={`h-auto w-full object-contain ${index === 0 ? "translate-x-0" : index === 1 ? "translate-y-[22px]" : "translate-x-0"}`}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
