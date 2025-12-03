@@ -170,7 +170,7 @@ const AgentPage = () => {
       <section className="px-5 md:px-20">
         <div className="py-10 md:py-20">
           <h2 className="py-5 text-center text-2xl font-semibold text-gray-700 md:text-4xl">
-            why choose grevego
+            Why Choose Grevego
           </h2>
           <p className="text-center text-gray-700">
             More sales, easy management, and eco-friendly delivery, sell smarter
