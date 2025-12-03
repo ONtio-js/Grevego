@@ -87,7 +87,7 @@ const HowItWorksPage = () => {
           Making healthy living effortless, <br /> sustainable and personalized.
         </h3>
         <p className="max-w-[800px] text-center text-gray-600">
-          Discover how we're transforming the way Africa eats through innovative
+          Discover how we&apos;re transforming the way Africa eats through innovative
           technology, green logistics and personalized nutrition support.
         </p>
       </div>
@@ -146,7 +146,7 @@ const HowItWorksPage = () => {
           <p className="text-center">
             At Grevego, we believe healthy eating should be accessible,
             reliable, and sustainable . By blending technology, nutrition, and
-            green logistics, we’re transforming how Africa eats — one delivery,
+            green logistics, we&apos;re transforming how Africa eats — one delivery,
             one plan, and one community at a time.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-4">

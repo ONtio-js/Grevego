@@ -29,7 +29,7 @@ const HeaderCarousel = () => {
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        loop={true}
+        
         speed={1000}
         slidesPerView={1.33}
         spaceBetween={16}
